@@ -73,7 +73,8 @@
 				position:absolute;\
 				top:'+$Target.scrollTop()+'px;\
 				right:0;\
-				width:235px;\
+				width:240px;\
+				height:220px;\
 				margin:0;\
 				padding:0;\
 				background:#fff;\
@@ -81,37 +82,37 @@
 			}\
 			#'+RandID+' div {\
 				width:auto;\
-				height:15px;\
+				height:10px;\
 				overflow:hidden;\
 				margin:0;\
 				padding:5px;\
 				padding-top:3px;\
-				background:#333;\
-				color:#fff;\
-				font-weight:bold;\
+				background:#4a5060 !important;\
 				text-align:right;\
+				line-height:10px;\
 				cursor:move;\
 			}\
 			#'+RandID+' a {\
-				color:#ccc;\
-				font-family:sans-serif;\
-				font-size:15px;\
-				font-weight:normal;\
+				color:#fff !important;\
+				background:transparent !important;\
+				font-family:sans-serif !important;\
+				font-size:13px !important;\
+				font-weight:bold !important;\
 				text-decoration:none;\
 				border-width:0;\
 				cursor:pointer;\
 			}\
 			#'+RandID+' iframe {\
 				position:static;\
-				width:235px;\
-				height:205px;\
+				width:240px;\
+				height:210px;\
 				border:none;\
 				pointer-events:auto;\
 			}\
 		';
 
 	//	Append styles to target document.
-		jQuery("<style/>",{type:'text/css'}).html(Styles).appendTo(jQuery('head',$Target));
+		jQuery("<style type='text/css'>" + Styles + "</style>").appendTo(jQuery('head',$Target));
 
 	//	Create SGP elements.
 		var $Box=jQuery("<div/>",{id:RandID});
