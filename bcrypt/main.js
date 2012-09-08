@@ -26,7 +26,9 @@ $( document ).ready( function() {
 			$salt = $('#Salt'),
 			$passwd = $('#Passwd'),
 			$canvas = $('#Canvas'), 
-			$cost, $saltcanvas; // don't exist yet		
+			$canvasWrap = $('#Identicon'), 
+			$saltcanvas = $('#SaltCanvas'),
+			$cost; // cost doesn't exist yet
 			
 		function b85_hash ( s ) {
 			// What we're doing is hashing the incoming string, 
@@ -64,10 +66,7 @@ $( document ).ready( function() {
 		});
 		
 		// move canvas to inside PasswdField fieldset, so that it can be positioned absolutely inside password box
-		$canvas.appendTo('#PasswdField');
-		
-		// Instantiate a canvas for the salt identicon ( for validating the bookmarklet )
-		$saltcanvas = $('<canvas id="SaltCanvas" width="16" height="16"></canvas>').prependTo( 'h1' );
+		$canvasWrap.appendTo('#PasswdField');
 		
 		// Also update the password identicon when it's changed, rather than waiting for generate
 		// Will be triggered on load by the $salt trigger

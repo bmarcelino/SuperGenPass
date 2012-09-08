@@ -23,11 +23,10 @@ input {
 }
 
 /* Canvas is positioned absolutely from within the password fieldset, where main.js moved it */
-#Canvas {
-	float: none;
+#Identicon {
 	position: absolute;
-	left: 176px;
-	top: 4px;
+	left: 181px;
+	top: -7px;
 	background-color: white;
 	z-index: 9999;
 }
