@@ -38,8 +38,8 @@
 		try { Lang } catch(e) { Lang=''; }
 
 	//	SGP location:
-		var FrameURL='http://mobile.supergenpass.com/index.html'+Lang;
-		var Domain='http://mobile.supergenpass.com';
+		var FrameURL='http://127.0.0.1/sgp/index.html'+Lang;
+		var Domain='http://127.0.0.1';
 
 	//	Find largest viewport, looping through frames if applicable.
 

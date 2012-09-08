@@ -66,7 +66,7 @@ $( document ).ready( function() {
 		});
 		
 		// move canvas to inside PasswdField fieldset, so that it can be positioned absolutely inside password box
-		$canvasWrap.appendTo('#PasswdField');
+		//$canvasWrap.appendTo('#PasswdField');
 		
 		// Also update the password identicon when it's changed, rather than waiting for generate
 		// Will be triggered on load by the $salt trigger
@@ -94,7 +94,7 @@ $( document ).ready( function() {
 		$('#SaltHUD').html('');
 		
 		// Add a new set of advanced settings for bcrypt, including the Cost field
-		$( '#MethodField' ).after( '<fieldset id="BcryptField"><label for="Cost">Cost</label><input id="Cost" type="text" placeholder="Cost"></fieldset>' );
+		$( '#MethodField' ).hide().after( '<fieldset id="BcryptField"><label for="Cost">Cost</label><input id="Cost" type="text" placeholder="Cost"></fieldset>' );
 		
 		// Grab the Cost from localstorage, and also validate the Cost on change
 		$cost = $('#Cost')
