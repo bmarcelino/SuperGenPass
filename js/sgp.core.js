@@ -52,8 +52,8 @@ function gp2_generate_hash(HashSeed) {
 */
 
 function gp2_validate_length(n) {
-	try { LenMax } catch(e) { LenMax = ( b64_hash( 'test' ) ).length; }
-	return ( parseInt( n, 10 ) ) ? Math.max( 4, Math.min( parseInt( n, 10 ), LenMax ) ) : 10;
+	var LenMax=(Method=='sha512')?24:22;
+	return (parseInt(n,10))?Math.max(4,Math.min(parseInt(n,10),LenMax)):10;
 }
 
 
@@ -70,18 +70,18 @@ function gp2_process_uri(URI,DisableTLD) {
 	var HostNameIsolator=new RegExp('^(http|https|ftp|ftps|webdav|gopher|rtsp|irc|nntp|pop|imap|smtp)://([^/:]+)');
 	var HostName=URI.match(HostNameIsolator);
 
-	if(HostName&&HostName[2]!=null) {
+	if(HostName&&HostName[2]!==undefined) {
 		HostName=HostName[2];
 	} else {
 		HostNameIsolator=new RegExp('^([^/:]+)');
 		HostName=URI.match(HostNameIsolator);
-		HostName=(HostName[1]!=null)?HostName[1]:URI;
+		HostName=(HostName[1]!==undefined)?HostName[1]:URI;
 	}
 
-	HostNameIsolator=new RegExp('^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})$');
+	HostNameIsolator=new RegExp('^([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3})$');
 	HostName=(HostName.match(HostNameIsolator))?[HostName]:HostName.split('.');
 
-	if(HostName[2]==null||DisableTLD) {
+	if(HostName[2]===undefined||DisableTLD) {
 		URI=HostName.join('.');
 	} else {
 		URI=HostName[HostName.length-2]+'.'+HostName[HostName.length-1];

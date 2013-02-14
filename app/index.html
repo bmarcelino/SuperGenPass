@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html manifest="sgp.appcache">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=250,maximum-scale=1.5">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="apple-touch-icon" href="sgp.png">
+
+		<link rel="alternate" lang="fr" hreflang="fr" title="En français" href="?fr">
+		<link rel="alternate" lang="es" hreflang="es" title="En español" href="?es">
+		<link rel="alternate" lang="de" hreflang="de" title="Auf Deutsch" href="?de">
+		<link rel="alternate" lang="pt-br" hreflang="pt-br" title="No português brasileiro" href="?pt-br">
+		<link rel="alternate" lang="zh-hk" hreflang="zh-hk" title="繁體中文" href="?zh-hk">
+		<link rel="alternate" lang="hu" hreflang="hu" title="Magyarul" href="?hu">
+		<link rel="alternate" lang="ru" hreflang="ru" title="ру́сский" href="?ru">
+
+		<style type="text/css">
+			<% print(grunt.file.read(css)); %>
+		</style>
+
+		<title>SGP3</title>
+
+	</head>
+
+	<body>
+
+		<h1 id="Title">
+			SGP3
+			<a href="#" id="Options">■</a>
+		</h1>
+
+		<noscript>Requires JavaScript!</noscript>
+
+		<form action="#">
+
+			<fieldset id="PasswdField">
+				<canvas id="SaltCanvas" width="16" height="16"></canvas>
+				<label for="Passwd">Master password</label>
+				<input id="Passwd" type="password" placeholder="Master password">
+			</fieldset>
+
+			<fieldset id="SaltField">
+				<label for="Salt">Salt</label>
+				<input id="Salt" type="password" placeholder="Salt">
+			</fieldset>
+
+			<fieldset id="DomainField">
+				<label for="Domain">Domain / URL</label>
+				<input id="Domain" type="url" placeholder="Domain / URL" autocorrect="off" autocapitalize="off">
+			</fieldset>
+
+			<fieldset id="MethodField">
+				<input id="MethodMD5" name="Method" type="radio" value="md5" checked="checked">
+				<label for="MethodMD5">MD5</label>
+				<input id="MethodSHA512" name="Method" type="radio" value="sha512">
+				<label for="MethodSHA512">SHA-512</label>
+			</fieldset>
+
+			<fieldset id="LenField">
+				<input id="Len" type="text" pattern="[0-9]*" value="10">
+				<a href="#" id="Down">−</a><a href="#" id="Up">+</a>
+			</fieldset>
+
+			<a href="#" id="Generate">Generate</a>
+
+		</form>
+
+		<div id="Result">
+			<canvas id="Canvas" width="16" height="16"></canvas>
+			<div id="Output"></div>
+		</div>
+
+		<script type="text/javascript">
+			<% print(grunt.file.read(js)); %>
+		</script>
+
+	</body>
+
+</html>
