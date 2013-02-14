@@ -38,13 +38,8 @@
 		var Query=(typeof Lang==='undefined')?'':'?'+Lang;
 
 	//	SGP location:
-<<<<<<< HEAD
 		var FrameURL='http://127.0.0.1/sgp/index.html'+Lang;
 		var Domain='http://127.0.0.1';
-=======
-		var FrameURL='https://mobile.supergenpass.com/'+Query;
-		var Domain='https://mobile.supergenpass.com';
->>>>>>> upstream/master
 
 	//	Find largest viewport, looping through frames if applicable.
 
