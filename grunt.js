@@ -44,11 +44,15 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'js/jquery.custom.js',
+		  'bcrypt/jquery-ui.js',
           'js/jquery.jstorage.js',
           'js/jquery.identicon5.js',
+		  'bcrypt/bCrypt.js',
+		  'bcrypt/ascii85.js',
           'js/sgp.hash.js',
           'js/sgp.core.js',
-          'js/sgp.form.js'
+          'js/sgp.form.js',
+		  'bcrypt/main.js',
         ],
         dest: 'build/app.js'
       },
