@@ -1,0 +1,3 @@
+credit:
+http://bugs.dojotoolkit.org/browser/dojo/dojox/trunk/encoding/ascii85.js
+https://code.google.com/p/javascript-bcrypt/
