@@ -9,9 +9,16 @@ module.exports = function(grunt) {
 
     meta: { name: 'SuperGenPass' },
 
+	concat: {
+		dist: {
+			src: ['css/sgp.css', 'bcrypt/bcrypt.css'],
+			dest: 'build/concat.css'
+		}
+	},
+	
     app: {
       js: 'build/app.js',
-      css: 'css/sgp.css',
+      css: 'build/concat.css',
       files: ['index.html', 'sgp.appcache'],
       src: 'app/',
       dest: 'build/'
@@ -44,11 +51,15 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'js/jquery.custom.js',
+		  'bcrypt/jquery-ui.js',
           'js/jquery.jstorage.js',
           'js/jquery.identicon5.js',
+		  'bcrypt/bCrypt.js',
+		  'bcrypt/ascii85.js',
           'js/sgp.hash.js',
           'js/sgp.core.js',
           'js/sgp.form.js',
+		  'bcrypt/main.js',
         ],
         dest: 'build/app.js'
       },
@@ -63,7 +74,7 @@ module.exports = function(grunt) {
     }
 
   });
-
+  
   grunt.registerTask('app', 'Generate self-contained HTML5 app', function() {
     var conf = grunt.config('app');
     conf.files.forEach(function(file) {
@@ -87,7 +98,7 @@ module.exports = function(grunt) {
     console.log('URL-encoded and anonymized bookmarklet.');
   });
 
-  grunt.registerTask('default', 'lint min:dist app');
+  grunt.registerTask('default', 'lint concat min:dist app');
   grunt.registerTask('bookmarklet', 'lint min:bookmarklet sanitize');
   grunt.registerTask('loader', 'lint min:loader');
   grunt.registerTask('all', 'lint min');

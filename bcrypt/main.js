@@ -7,7 +7,6 @@ $( document ).ready( function() {
 		$salt = $('#Salt'),
 		$passwd = $('#Passwd'),
 		$canvas = $('#Canvas'), 
-		$canvasWrap = $('#Identicon'), 
 		$saltcanvas = $('#SaltCanvas'),
 		$cost; // cost doesn't exist yet
 		
@@ -46,13 +45,13 @@ $( document ).ready( function() {
 		} 
 	});
 	
-	/*
+	
 	// Also update the password identicon when it's changed, rather than waiting for generate
 	// Will be triggered on load by the $salt trigger
 	$passwd.on( 'change', function( e ) {
 		update_identicon( ( this.value ) ? this.value + $salt.val() : '' , $canvas );
 	} );
-
+	/*
 	// Then update both the salt and password icons and the jstorage value
 	// whenever it's changed and also when the page is loaded
 	$salt.on( 'change', function( e ) {
